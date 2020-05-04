@@ -8,6 +8,7 @@ import { UsersComponent } from './layout/users/users.component';
 import { HeaderComponent } from './layout/components/header/header.component';
 
 import { FormsModule } from '@angular/forms'; // import angular form module
+import { HttpClientModule } from '@angular/common/http'; // import http module
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms'; // import angular form module
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
