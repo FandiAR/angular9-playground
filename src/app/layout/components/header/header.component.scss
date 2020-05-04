@@ -1,0 +1,46 @@
+$primary: #72a065;
+
+header {
+  width: 100vW;
+  margin: auto;
+  background: white;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 5px -2px $primary;
+
+  a {
+    text-decoration: none;
+    user-select: none;
+    color: $primary;
+  }
+
+  a.logo {
+    padding: .5rem 0;
+    font-weight: bold;
+    padding-left: 5rem;
+    img {
+      width: 30px;
+    }
+  }
+
+  nav {
+    ul {
+      list-style-type: none;
+      display: flex;
+      .active {
+        border-bottom: solid 1px $primary;
+      }
+      li {
+        &:hover {
+          color: darken($color: $primary, $amount: 10%);
+        }
+        a {
+          padding: 0 1em;
+        }
+      }
+    }
+  }
+}

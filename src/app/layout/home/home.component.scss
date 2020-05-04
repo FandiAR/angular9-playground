@@ -1,0 +1,60 @@
+$primary: #72a065;
+
+.play-container {
+  padding: 3em;
+  border: solid 1px lightgray;
+  margin-bottom: 1em;
+  input {
+    padding: 1em;
+    font-size: 14px;
+    width: 100%;
+    &:focus {
+      outline: 0;
+    }
+  }
+  button {
+    font-weight: bold;
+    font-size: 14px;
+    border: solid 1px $primary;
+    border-radius: 5px;
+    padding: .5rem;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+  }
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  button:hover span {
+    padding-right: 25px;
+  }
+  button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+}
+.actived {
+  background-color: yellow;
+  border: solid 4px black;
+}
+.isActive {
+  background-color: lighten($color: lightgray, $amount: 5%);
+  border: solid 4px grey;
+}
+.notActive {
+  background-color: $primary;
+  color: white;
+  border: solid 4px black;
+}
