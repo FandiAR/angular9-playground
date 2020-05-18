@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ip: 'http://localhost:3000/'
+  ip: 'https://jsonplaceholder.typicode.com/'
 };
 
 /*
