@@ -10,6 +10,8 @@ import { HeaderComponent } from './layout/components/header/header.component';
 import { FormsModule } from '@angular/forms'; // import angular form module
 import { HttpClientModule } from '@angular/common/http'; // import http module
 
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader'; // loading skeleton
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http'; // import http module
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

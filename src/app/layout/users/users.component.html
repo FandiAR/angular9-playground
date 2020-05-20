@@ -1,11 +1,37 @@
 <div class="layout-container">
-  <h1>Daftar Pengguna</h1>
-  <ul *ngIf="users">
-    <li *ngFor="let user of users">
-      <p class="name">{{ user.name }}</p>
-      <p class="city">{{ user.address.city }}</p>
-      <p class="city">PT. {{ user.company.name }}</p>
-      <a href="{{ user.website }}" target="_blank" class="site">Website</a>
-    </li>
-  </ul>
+  <ng-template [ngIf]="users && users.length > 0" [ngIfElse]="skeletonheader">
+    <h1>Daftar Pengguna</h1>
+  </ng-template>
+  <ng-template #skeletonheader>
+    <ngx-skeleton-loader
+      animation="progress"
+      [theme]="{
+        'border-radius': '5px',
+        height: '50px',
+        'border': '1px solid white',
+        width: '250px'
+      }"
+    ></ngx-skeleton-loader>
+  </ng-template>
+
+  <ng-template [ngIf]="users && users.length > 0" [ngIfElse]="skeletonbody">
+    <ul *ngIf="users">
+      <li *ngFor="let user of users">
+        <p class="name">{{ user.name }}</p>
+        <p class="city">{{ user.address.city }}</p>
+        <p class="city">PT. {{ user.company.name }}</p>
+        <a href="{{ user.website }}" target="_blank" class="site">Website</a>
+      </li>
+    </ul>
+  </ng-template>
+  <ng-template #skeletonbody>
+    <ngx-skeleton-loader
+      animation="progress"
+      [theme]="{
+        'border-radius': '5px',
+        height: '80vH',
+        'border': '1px solid white'
+      }"
+    ></ngx-skeleton-loader>
+  </ng-template>
 </div>
